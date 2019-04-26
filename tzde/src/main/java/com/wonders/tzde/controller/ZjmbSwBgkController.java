@@ -3,21 +3,20 @@ package com.wonders.tzde.controller;
 import com.wonders.tzde.service.ZjmbSwBgkService;
 import com.wonders.tzde.model.ZjmbSwBgk;
 import com.wonders.tzde.utils.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Api(value = "死亡接口",tags = "死亡数据管理")
 @RestController
 @RequestMapping("/zjmbSwBgk")
 public class ZjmbSwBgkController {
@@ -30,8 +29,9 @@ public class ZjmbSwBgkController {
      * @param params
      * @return
      */
-    @PostMapping("/getSwData")
-    public Result getSwData(@RequestBody(required = false) ZjmbSwBgk params) {
+    @GetMapping("/getSwData")
+    @ApiOperation("死亡数据共享接口")
+    public Result getSwData(ZjmbSwBgk params) {
         try {
             if (params == null) {
                 params = new ZjmbSwBgk();

@@ -1,4 +1,4 @@
-package com.wonders.tzde.datasource;
+package com.wonders.tzde.config;
 
 
 import com.alibaba.druid.pool.DruidDataSource;

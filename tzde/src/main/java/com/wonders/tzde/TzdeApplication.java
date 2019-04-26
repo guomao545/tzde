@@ -9,10 +9,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@EnableTransactionManagement//启动事务
-@SpringBootApplication
-@MapperScan("com.wonders.tzde.mapper")
+
 @EnableScheduling
+@SpringBootApplication
+@EnableTransactionManagement//启动事务
+@MapperScan("com.wonders.tzde.mapper")
 public class TzdeApplication extends SpringBootServletInitializer {
 
     @Override
